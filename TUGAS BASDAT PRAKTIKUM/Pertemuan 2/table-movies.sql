@@ -22,3 +22,6 @@ ORDER BY title ASC;
 
 SELECT title FROM movies
 ORDER BY title DESC;
+
+SELECT * FROM movies
+WHERE rating IS NOT NULL;
