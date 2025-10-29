@@ -1,0 +1,96 @@
+CREATE TABLE binatang_1 (
+	id_binatang1 INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	binatang1 VARCHAR(100)
+);
+
+CREATE TABLE binatang_2 (
+	id_binatang2 INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	binatang2 VARCHAR(100)
+);
+
+DROP TABLE binatang_1;
+DROP TABLE binatang_2;
+
+
+INSERT INTO binatang_1 (id_binatang1, binatang1)
+VALUES
+(DEFAULT, 'Cicak'),
+(DEFAULT, 'Cacing'),
+(DEFAULT, 'Kecoa'),
+(DEFAULT, 'Kadal');
+
+INSERT INTO binatang_2 (id_binatang2, binatang2)
+VALUES
+(DEFAULT, 'Tokek'),
+(DEFAULT, 'Cacing'),
+(DEFAULT, 'Lasun'),
+(DEFAULT, 'Kadal');
+
+SELECT * FROM binatang_1;
+SELECT * FROM binatang_2;
+
+-- INNER JOIN
+SELECT
+	binatang_1.id_binatang1,
+	binatang_1.binatang1,
+	
+	binatang_2.id_binatang2,
+	binatang_2.binatang2
+FROM
+	binatang_1
+INNER JOIN binatang_2
+ON binatang_1.binatang1 = binatang_2.binatang2;
+
+-- LEFT JOIN
+SELECT
+	binatang_1.id_binatang1,
+	binatang_1.binatang1,
+	
+	binatang_2.id_binatang2,
+	binatang_2.binatang2
+FROM
+	binatang_1
+LEFT JOIN binatang_2
+ON binatang_1.binatang1 = binatang_2.binatang2;
+
+-- RIGHT JOIN
+SELECT
+	binatang_1.id_binatang1,
+	binatang_1.binatang1,
+	
+	binatang_2.id_binatang2,
+	binatang_2.binatang2
+FROM
+	binatang_1
+RIGHT JOIN binatang_2
+ON binatang_1.binatang1 = binatang_2.binatang2;
+
+-- FULL JOIN
+SELECT
+	binatang_1.id_binatang1,
+	binatang_1.binatang1,
+	
+	binatang_2.id_binatang2,
+	binatang_2.binatang2
+FROM
+	binatang_1
+FULL JOIN binatang_2
+ON binatang_1.binatang1 = binatang_2.binatang2;
+
+-- CROSS JOIN
+SELECT * FROM binatang_1 CROSS JOIN binatang_2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
